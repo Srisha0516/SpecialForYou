@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Special For You</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+background:linear-gradient(to right,#00FF7F,#b8ffd8);
+color:#064d2f;
+}
+
+.container{
+padding:40px;
+}
+
+#message{
+font-size:30px;
+font-weight:bold;
+min-height:60px;
+margin-bottom:40px;
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.gallery img{
+width:250px;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Something for You 💚</h1>
+
+<div id="message"></div>
+
+<!-- Music -->
+<audio autoplay loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Photos -->
+<div class="gallery">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+
+</div>
+
+</div>
+
+<script>
+
+var text="You are one of the most special people in my life... 💚 Thank you for all the smiles, memories, and moments we share.";
+
+var i=0;
+
+function typing(){
+
+if(i<text.length){
+document.getElementById("message").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,50);
+}
+
+}
+
+typing();
+
+</script>
+
+</body>
+</html>
