@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>For You 💚</title>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(to right,#00FF7F,#b8ffd8);
+color:#064d2f;
+text-align:center;
+}
+
+/* Center message box */
+.message-box{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:40px;
+border-radius:25px;
+width:60%;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+z-index:2;
+}
+
+.message-box h1{
+margin-bottom:20px;
+}
+
+.message-box p{
+font-size:18px;
+line-height:1.6;
+}
+
+/* Floating photos */
+.photo{
+position:absolute;
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:15px;
+opacity:0.8;
+animation:float 10s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-30px);}
+100%{transform:translateY(0);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="message-box">
+
+<h1>You, Through My Eyes 💚</h1>
+
+<p>
+You are someone who brings happiness wherever you go...  
+Your smile, your kindness, and your presence make everything better.  
+I just wanted you to know how special you are to me 💚You make everything better just by being there.
+And that’s something really special to me💚💚
+</p>
+
+</div>
+
+<!-- Random Photos -->
+<img src="photo1.jpg" class="photo" style="top:10%; left:5%;">
+<img src="photo2.jpg" class="photo" style="top:70%; left:10%;">
+<img src="photo3.jpg" class="photo" style="top:20%; right:10%;">
+<img src="photo4.jpg" class="photo" style="bottom:10%; right:5%;">
+<img src="photo5.jpg" class="photo" style="top:50%; left:80%;">
+
+</body>
+</html>
