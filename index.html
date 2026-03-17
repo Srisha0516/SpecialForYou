@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Enter the Secret</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:'Segoe UI', sans-serif;
+background:linear-gradient(to right,#00FF7F,#b8ffd8);
+}
+
+.container{
+background:white;
+padding:50px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+width:400px;
+}
+
+h1{
+color:#00b36b;
+margin-bottom:30px;
+}
+
+input{
+width:80%;
+padding:12px;
+border-radius:25px;
+border:2px solid #00FF7F;
+font-size:16px;
+outline:none;
+}
+
+input:focus{
+border-color:#00b36b;
+}
+
+button{
+margin-top:25px;
+padding:12px 35px;
+background:#00FF7F;
+border:none;
+border-radius:25px;
+color:#064d2f;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+font-weight:bold;
+}
+
+button:hover{
+background:#00cc66;
+transform:scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Enter the Secret Code 🔐</h1>
+
+<input type="password" id="pass" placeholder="Enter password">
+
+<br>
+
+<button onclick="check()">Let me in 🔑</button>
+
+</div>
+
+<script>
+
+function check(){
+
+var password=document.getElementById("pass").value;
+
+if(password=="Mamsiii"){
+window.location.href="gift.html";
+}
+
+else{
+alert("Wrong password 😅");
+}
+
+}
+
+</script>
+
+</body>
+</html>
