@@ -8,64 +8,51 @@
 
 body{
 margin:0;
-overflow:hidden;
 font-family:'Segoe UI',sans-serif;
 background:linear-gradient(to right,#00FF7F,#b8ffd8);
 color:#064d2f;
 text-align:center;
 }
 
-/* birthday */
+/* birthday screen */
 #birthday{
-position:absolute;
-width:100%;
-height:100%;
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-z-index:10;
 }
 
-#mainContent{
+/* hide main first */
+#main{
 display:none;
+padding:20px;
 }
 
 /* message box */
 .message-box{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
 background:white;
-padding:35px;
-border-radius:25px;
-width:55%;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-z-index:2;
+padding:30px;
+border-radius:20px;
+width:60%;
+margin:auto;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
-#text{
-font-size:20px;
-line-height:1.6;
-min-height:80px;
+/* photos grid (simple & safe) */
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:30px;
 }
 
-/* photos */
-.photo{
-position:absolute;
-width:105px;
-height:105px;
+.gallery img{
+width:150px;
+height:150px;
 object-fit:cover;
 border-radius:15px;
-opacity:0.9;
-animation:float 5s infinite ease-in-out;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
 }
 
 </style>
@@ -74,60 +61,49 @@ animation:float 5s infinite ease-in-out;
 
 <body>
 
-<!-- 🎉 BIRTHDAY -->
+<!-- 🎉 Birthday -->
 <div id="birthday">
 <h1>🎉 Happy Birthday 💚</h1>
 <p>You deserve all the happiness in the world ✨</p>
 </div>
 
-<!-- 💚 MAIN -->
-<div id="mainContent">
+<!-- 💚 Main Content -->
+<div id="main">
 
 <div class="message-box">
-<h1>You, Through My Eyes 💚</h1>
+<h2>You, Through My Eyes 💚</h2>
 <p id="text"></p>
 </div>
 
-<!-- 📸 MANY MANY PHOTOS (FILLED LOOK) -->
+<!-- 📸 Photos -->
+<div class="gallery">
 
-<!-- original -->
-<img src="be3d9d03-9171-4a28-a863-80d63b6383cf.jpg" class="photo" style="top:2%; left:2%;">
-<img src="6222e97a-15e5-4f23-9a38-510b3bd8c2b6.jpg" class="photo" style="top:5%; left:75%;">
-<img src="5f6127d1-f402-4bf7-a9f0-8fd42cbdf061.jpg" class="photo" style="top:20%; left:10%;">
-<img src="e50b7ca2-50a1-488d-a63e-6b870fe67d83.jpg" class="photo" style="top:25%; right:5%;">
-<img src="631a6283-dd65-4090-b085-1ad47f0e62fd.jpg" class="photo" style="bottom:5%; left:5%;">
+<img src="be3d9d03-9171-4a28-a863-80d63b6383cf.jpg">
+<img src="6222e97a-15e5-4f23-9a38-510b3bd8c2b6.jpg">
+<img src="5f6127d1-f402-4bf7-a9f0-8fd42cbdf061.jpg">
+<img src="e50b7ca2-50a1-488d-a63e-6b870fe67d83.jpg">
+<img src="631a6283-dd65-4090-b085-1ad47f0e62fd.jpg">
 
-<img src="2be4a050-56c9-4509-9f26-03703da0e1ab.jpg" class="photo" style="top:60%; left:10%;">
-<img src="11b1926b-ef85-4412-8c93-10512320e003.jpg" class="photo" style="top:10%; left:40%;">
-<img src="811d6136-3607-4825-9aa8-fb04ce182d00.jpg" class="photo" style="bottom:20%; right:10%;">
-<img src="25dde7e1-fe57-4b42-923f-4ab4023a9b4d.jpg" class="photo" style="top:55%; left:70%;">
-<img src="295db281-7f4d-41f2-9576-ad54a172ed21.jpg" class="photo" style="bottom:30%; left:30%;">
+<img src="2be4a050-56c9-4509-9f26-03703da0e1ab.jpg">
+<img src="11b1926b-ef85-4412-8c93-10512320e003.jpg">
+<img src="811d6136-3607-4825-9aa8-fb04ce182d00.jpg">
+<img src="25dde7e1-fe57-4b42-923f-4ab4023a9b4d.jpg">
+<img src="295db281-7f4d-41f2-9576-ad54a172ed21.jpg">
 
-<img src="c77a1a4c-3698-4cf2-9381-5aed57c88183.jpg" class="photo" style="top:35%; left:60%;">
-<img src="c8685019-39f5-402d-86f5-90d55262ac02.jpg" class="photo" style="bottom:5%; right:5%;">
-<img src="349fc28e-44b3-41c2-b0b5-363170120a03.jpg" class="photo" style="top:80%; left:50%;">
+<img src="c77a1a4c-3698-4cf2-9381-5aed57c88183.jpg">
+<img src="c8685019-39f5-402d-86f5-90d55262ac02.jpg">
+<img src="349fc28e-44b3-41c2-b0b5-363170120a03.jpg">
 
-<!-- duplicates to fill -->
-<img src="be3d9d03-9171-4a28-a863-80d63b6383cf.jpg" class="photo" style="top:75%; left:80%;">
-<img src="6222e97a-15e5-4f23-9a38-510b3bd8c2b6.jpg" class="photo" style="bottom:40%; left:85%;">
-<img src="5f6127d1-f402-4bf7-a9f0-8fd42cbdf061.jpg" class="photo" style="top:45%; left:25%;">
-<img src="e50b7ca2-50a1-488d-a63e-6b870fe67d83.jpg" class="photo" style="bottom:15%; left:60%;">
-<img src="631a6283-dd65-4090-b085-1ad47f0e62fd.jpg" class="photo" style="top:5%; left:55%;">
-
-<img src="2be4a050-56c9-4509-9f26-03703da0e1ab.jpg" class="photo" style="top:70%; left:45%;">
-<img src="11b1926b-ef85-4412-8c93-10512320e003.jpg" class="photo" style="bottom:10%; left:70%;">
-<img src="811d6136-3607-4825-9aa8-fb04ce182d00.jpg" class="photo" style="top:30%; left:85%;">
-<img src="25dde7e1-fe57-4b42-923f-4ab4023a9b4d.jpg" class="photo" style="bottom:50%; left:10%;">
-<img src="295db281-7f4d-41f2-9576-ad54a172ed21.jpg" class="photo" style="top:15%; left:25%;">
+</div>
 
 </div>
 
 <script>
 
-// birthday delay
+// show main after 4 sec
 setTimeout(function(){
 document.getElementById("birthday").style.display="none";
-document.getElementById("mainContent").style.display="block";
+document.getElementById("main").style.display="block";
 typeText();
 },4000);
 
@@ -138,9 +114,9 @@ var i=0;
 
 function typeText(){
 if(i<msg.length){
-document.getElementById("text").innerHTML+=msg.charAt(i);
+document.getElementById("text").innerHTML += msg.charAt(i);
 i++;
-setTimeout(typeText,35);
+setTimeout(typeText,30);
 }
 }
 
