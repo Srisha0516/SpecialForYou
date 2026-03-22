@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>Special For You</title>
+<title>Special For You 💚</title>
 
 <style>
 
@@ -19,22 +19,24 @@ padding:40px;
 }
 
 #message{
-font-size:30px;
+font-size:28px;
 font-weight:bold;
 min-height:60px;
-margin-bottom:40px;
+margin-bottom:30px;
 }
 
+/* Photos */
 .gallery{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:20px;
+margin-top:20px;
 }
 
 .gallery img{
-width:250px;
-height:250px;
+width:220px;
+height:220px;
 object-fit:cover;
 border-radius:20px;
 box-shadow:0 10px 20px rgba(0,0,0,0.2);
@@ -43,6 +45,28 @@ transition:0.3s;
 
 .gallery img:hover{
 transform:scale(1.08);
+}
+
+/* Button */
+button{
+margin-top:40px;
+padding:12px 35px;
+background:#00FF7F;
+border:none;
+border-radius:25px;
+color:#064d2f;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+display:block;
+margin-left:auto;
+margin-right:auto;
+transition:0.3s;
+}
+
+button:hover{
+background:#00cc66;
+transform:scale(1.05);
 }
 
 </style>
@@ -55,43 +79,47 @@ transform:scale(1.08);
 
 <h1>Something for You 💚</h1>
 
+<!-- Typing Message -->
 <div id="message"></div>
 
-<!-- Music -->
-<audio autoplay loop>
-<source src="vlc-record-2026-03-17-10h29m30s-Innunu Bekagide - Vasuki Vaibhav-(Fun2Desi.Com)-.mp3" type="audio/mpeg">
+<!-- 🎵 SONG -->
+<audio autoplay loop controls>
+<source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <!-- Photos -->
 <div class="gallery">
 
-<img src="0ad38ac2-9111-43c8-ad9a-cce2799ec1a7.jpg">
-<img src="1ad18c1e-b076-41b1-98bb-d322c08e0744.jpg">
-<img src="4ca1a41d-4a98-41de-99b9-a01d5cf987ae.jpg">
-<img src="f7fba758-3420-4588-8362-21aed5b70d36.jpg">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
 
 </div>
+
+<!-- ✅ NEXT BUTTON (THIS IS AFTER PHOTOS) -->
+<button onclick="nextPage()">Next 💚</button>
 
 </div>
 
 <script>
 
-var text="You are one of the most special people in my life... 💚 Thank you for all the smiles, memories, and moments we share.";
+// Typing effect
+var text="You are one of the most special people in my life... 💚 Thank you for all the beautiful memories.";
 
 var i=0;
 
 function typing(){
-
 if(i<text.length){
 document.getElementById("message").innerHTML+=text.charAt(i);
 i++;
 setTimeout(typing,50);
 }
-
 }
 
 typing();
-  // Next page
+
+// Next page function
 function nextPage(){
 window.location.href="message.html";
 }
