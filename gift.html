@@ -12,10 +12,16 @@ font-family:'Segoe UI',sans-serif;
 text-align:center;
 background:linear-gradient(to right,#00FF7F,#b8ffd8);
 color:#064d2f;
+overflow-y:auto; /* IMPORTANT FIX */
 }
 
 .container{
 padding:40px;
+padding-bottom:100px; /* ensures button visible */
+}
+
+h1{
+margin-bottom:20px;
 }
 
 #message{
@@ -23,6 +29,11 @@ font-size:28px;
 font-weight:bold;
 min-height:60px;
 margin-bottom:30px;
+}
+
+/* 🎵 audio */
+audio{
+margin:20px 0;
 }
 
 /* Photos */
@@ -48,25 +59,26 @@ transform:scale(1.08);
 }
 
 /* Button */
+.button-box{
+margin-top:60px;
+margin-bottom:50px;
+}
+
 button{
-margin-top:40px;
-padding:12px 35px;
+padding:14px 40px;
 background:#00FF7F;
 border:none;
-border-radius:25px;
+border-radius:30px;
 color:#064d2f;
 font-size:18px;
 cursor:pointer;
 font-weight:bold;
-display:block;
-margin-left:auto;
-margin-right:auto;
 transition:0.3s;
 }
 
 button:hover{
 background:#00cc66;
-transform:scale(1.05);
+transform:scale(1.08);
 }
 
 </style>
@@ -97,15 +109,17 @@ transform:scale(1.05);
 
 </div>
 
-<!-- ✅ NEXT BUTTON (THIS IS AFTER PHOTOS) -->
+<!-- ✅ NEXT BUTTON (NOW FIXED) -->
+<div class="button-box">
 <button onclick="nextPage()">Next 💚</button>
+</div>
 
 </div>
 
 <script>
 
 // Typing effect
-var text="You are one of the most special people in my life... 💚 Thank you for all the beautiful memories.";
+var text="You are one of the most special people in my life... 💚 Thank you for all the smiles, memories, and moments we share.";
 
 var i=0;
 
@@ -113,13 +127,13 @@ function typing(){
 if(i<text.length){
 document.getElementById("message").innerHTML+=text.charAt(i);
 i++;
-setTimeout(typing,50);
+setTimeout(typing,40);
 }
 }
 
 typing();
 
-// Next page function
+// Next page
 function nextPage(){
 window.location.href="message.html";
 }
